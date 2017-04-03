@@ -6,4 +6,5 @@ public static void dfs(int u) {
 				dfs(v);
 				size[u] += size[v];
 			}
-	}
+		}
+}
