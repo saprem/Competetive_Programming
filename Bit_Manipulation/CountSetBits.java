@@ -1,3 +1,4 @@
+// Brian Kernighan’s O(log(n))
 int count_one (int n)
     {
         while(n)
@@ -7,3 +8,5 @@ int count_one (int n)
         }
         return count;
 }
+
+//O(1) using lookup table
