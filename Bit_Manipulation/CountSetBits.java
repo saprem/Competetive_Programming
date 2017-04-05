@@ -46,6 +46,11 @@ static const unsigned char lookup_t[256] =
 #   define B6(n) B4(n), B4(n+1), B4(n+1), B4(n+2)
     B6(0), B6(1), B6(1), B6(2)
 };
+int count = lookup[n & 0xff] +    // consider first 8 bits
+        lookup[(n >> 8) & 0xff] +     // consider next 8 bits
+        lookup[(n >> 16) & 0xff] +    // consider next 8 bits
+        lookup[(n >> 24) & 0xff];    // consider last 8 bits
+
 
 //Using divide and conquer strategy
 int countSetBits(unsigned int n)
